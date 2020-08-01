@@ -1,0 +1,26 @@
+{
+  "name": "web-sprint-challenge-adding-data-persistence",
+  "version": "1.0.0",
+  "description": "**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iworkinmysleep/web-sprint-challenge-adding-data-persistence.git"
+  },
+  "author": "Jason Hinton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iworkinmysleep/web-sprint-challenge-adding-data-persistence/issues"
+  },
+  "homepage": "https://github.com/iworkinmysleep/web-sprint-challenge-adding-data-persistence#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "knex": "^0.21.2",
+    "sqlite3": "^5.0.0"
+  }
+}
