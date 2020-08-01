@@ -13,6 +13,14 @@ exports.up = function (knex) {
 		})
 		.createTable("tasks", (tbl) => {
 			tbl.increments();
+			tbl
+				.integer("project_id")
+				.unsigned()
+				.notNullable()
+				.references("id")
+				.inTable("projects")
+				.onUpdate("CASCADE")
+				.onDelete("CASCADE");
 			tbl.text("task_description", 128).notNullable();
 			tbl.text("notes", 128);
 			tbl.boolean("task_completed", false).notNullable();
