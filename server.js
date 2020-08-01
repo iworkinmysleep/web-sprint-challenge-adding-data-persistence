@@ -9,9 +9,6 @@ server.use(helmet());
 server.use(express.json());
 server.use('/api/projects', projectsRouter)
 
-server.get('/', (req,res) => {
-  res.send('Node Sprint 2')
-})
 
 module.exports = server;
 

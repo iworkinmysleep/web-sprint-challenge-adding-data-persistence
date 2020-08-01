@@ -1,4 +1,3 @@
-
 module.exports = {
 	development: {
 		client: "sqlite3",
@@ -8,6 +7,9 @@ module.exports = {
 		},
 		migrations: {
 			directory: "./data/migrations",
+		},
+		seeds: {
+			directory: "./data/seeds",
 		},
 		pool: {
 			afterCreate: (conn, done) => {
