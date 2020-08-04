@@ -23,13 +23,13 @@ exports.up = function (knex) {
 				.onDelete("CASCADE");
 			tbl.text("task_description", 128).notNullable();
 			tbl.text("notes", 128);
-			tbl.boolean("task_completed").notNullable();
+			tbl.boolean("task_completed").notNullable().defaultTo(false);
 		});
 };
 
 exports.down = function (knex) {
 	return knex.schema
-		.dropTableIfExists("projects")
 		.dropTableIfExists("resources")
-		.dropTableIfExists("tasks");
+		.dropTableIfExists("tasks")
+		.dropTableIfExists("projects");
 };
