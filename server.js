@@ -82,4 +82,18 @@ server.post("/api/tasks", (req, res) => {
 		});
 });
 
+server.get("/api/projects/:id/tasks", (req, res) => {
+	const { id } = req.params;
+	db("projects as p")
+		.join("tasks as t", "t.project_id", "p.id")
+		.select("p.name", "p.description", "t.task_description")
+		.where({ project_id: id })
+		.then((tasks) => {
+			res.status(200).json(tasks);
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "failed to retrieve tasks", err });
+		});
+});
+
 module.exports = server;
